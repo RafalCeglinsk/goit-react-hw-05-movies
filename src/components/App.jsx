@@ -1,11 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './Routes';
+import { Route, Routes } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+
+const Home = lazy(() => import('./Home/Home'));
+const Movies = lazy(() => import('./Movies/Movies'));
+const MovieDetails = lazy(() => import('./MovieDetails/MovieDetails'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
 
 export const App = () => {
   return (
-    <Router>
-      <Routes />
-    </Router>
+    <div>
+      <Routes>
+        <Route path="/" element={Home} />
+        <Route path="/Movies" element={Movies} />
+        <Route path="/MovieDetails/:movieId" element={MovieDetails} />
+        <Route path="/Cast/:movieId/cast" element={Cast} />
+        <Route path="/Movies/:movieId/reviews" element={Reviews} />
+        <Route element={Home} />
+      </Routes>
+    </div>
   );
 };
