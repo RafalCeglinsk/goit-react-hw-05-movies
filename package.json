@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://goitacademy.github.io/react-homework-template/",
   "dependencies": {
+    "axios": "^1.6.1",
     "components": "^0.1.0",
     "depcheck": "^1.4.7",
     "eslint-config-react-app": "^7.0.1",
