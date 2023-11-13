@@ -1,16 +1,11 @@
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Routes from './Routes';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Router>
+      <Routes />
+    </Router>
   );
 };
