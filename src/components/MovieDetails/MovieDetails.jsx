@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from 'api/getMovieDetails';
 
 function MovieDetails() {
@@ -19,7 +19,7 @@ function MovieDetails() {
     }
 
     fetchMovieDetails();
-  }, []);
+  }, [movieId]);
 
   if (!details) {
     return <div>Loading...</div>;
@@ -44,7 +44,8 @@ function MovieDetails() {
       />
 
       <ul>
-        <p>Additional Information</p>
+        <h2>Additional Information</h2>
+        <Outlet />
         <li>
           <Link to="cast" state={{ movieId: movieId }}>
             Cast
