@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import { useLocation } from 'react-router-dom';
 import { getMovieCredits } from 'api/getMovieCredits';
 
@@ -38,5 +40,16 @@ function Cast() {
     </div>
   );
 }
+
+Cast.propTypes = {
+  credits: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      profile_path: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      character: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default Cast;

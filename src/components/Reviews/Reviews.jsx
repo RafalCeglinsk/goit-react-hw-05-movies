@@ -1,5 +1,7 @@
-import { getMovieReviews } from 'api/getMovieReviews';
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+import { getMovieReviews } from 'api/getMovieReviews';
 import { useLocation } from 'react-router-dom';
 
 function Reviews() {
@@ -34,5 +36,14 @@ function Reviews() {
     </div>
   );
 }
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default Reviews;

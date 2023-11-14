@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import { Link, useLocation } from 'react-router-dom';
 import { getTrendingMovies } from 'api/getTrending';
 
@@ -37,5 +39,10 @@ function Home() {
     </div>
   );
 }
-
+Home.propTypes = {
+  movies: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+};
 export default Home;

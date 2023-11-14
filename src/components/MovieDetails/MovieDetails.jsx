@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
 import { Link, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from 'api/getMovieDetails';
 
@@ -60,5 +62,16 @@ function MovieDetails() {
     </div>
   );
 }
+
+MovieDetails.propTypes = {
+  details: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    vote_average: PropTypes.number.isRequired,
+    overview: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    poster_path: PropTypes.string.isRequired,
+  }),
+};
 
 export default MovieDetails;
