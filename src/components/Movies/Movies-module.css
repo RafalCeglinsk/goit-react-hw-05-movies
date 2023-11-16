@@ -1,0 +1,37 @@
+.Tittle {
+  font-size: 1.8em;
+  display: block;
+  text-align: center;
+  color: black;
+}
+.MovieList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 30px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.MovieListImg {
+  display: block;
+  width: 280px;
+  height: auto;
+}
+.InputContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.MoviesInput {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  font-size: 0.98em;
+}
+.SearchButton {
+  margin-left: 10px;
+  text-align: center;
+}

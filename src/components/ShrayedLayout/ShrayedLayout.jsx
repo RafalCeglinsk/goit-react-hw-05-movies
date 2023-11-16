@@ -3,9 +3,13 @@ import { NavLink } from 'react-router-dom';
 export const SharedLayout = () => {
   return (
     <div>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movies</NavLink>
+      <nav className="LayoutNav">
+        <NavLink className="LayoutNavItem" to="/">
+          Home
+        </NavLink>
+        <NavLink className="LayoutNavItem" to="/movies">
+          Movies
+        </NavLink>
       </nav>
     </div>
   );

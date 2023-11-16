@@ -33,7 +33,11 @@ function Home() {
             >
               <img
                 className="HomeListImg"
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                src={
+                  movie.poster_path
+                    ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                    : 'https://d32qys9a6wm9no.cloudfront.net/images/others/not_available/poster_500x735.png?t=1699920683'
+                }
                 alt={movie.title}
               />
             </Link>
