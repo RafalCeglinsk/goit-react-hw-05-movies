@@ -7,7 +7,6 @@ function Movies() {
   const location = useLocation();
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [movieId] = useState(location.state.movieId);
 
   const handleSearch = async () => {
     try {
