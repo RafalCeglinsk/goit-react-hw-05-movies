@@ -9,8 +9,8 @@
 ## General Info
 
 I would like to introduce you my application called Movie Finder. You can use
-this app to search popular movies all around the world! Check their reviews,
-ratings, cast and details!
+this app to search popular movies all around the world! Check their cast
+ratings, reviews and details!
 
 ## Technologies
 
