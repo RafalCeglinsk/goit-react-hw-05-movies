@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+
 import { getMoviesByQuery } from 'api/getMoviesByQuery';
 
 function Movies() {
+  const location = useLocation();
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [movieId] = useState(location.state.movieId);
 
   const handleSearch = async () => {
     try {
@@ -29,13 +32,23 @@ function Movies() {
         <button onClick={handleSearch} className="SearchButton">
           Search
         </button>
+        <Link
+          to={location.state.from}
+          state={{ from: location, movieId: location.state.movieId }}
+          className="MoviesBackLink"
+        >
+          Go back
+        </Link>
       </div>
 
       <ul className="MovieList">
         {searchResults.map(movie => (
           <li key={movie.id}>
             {' '}
-            <Link to={`/movies/${movie.id}`} state={{ movieId: movie.id }}>
+            <Link
+              to={`/movies/${movie.id}`}
+              state={{ from: location, movieId: movie.id }}
+            >
               <img
                 className="MovieListImg"
                 src={

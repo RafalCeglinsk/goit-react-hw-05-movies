@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { getMovieReviews } from 'api/getMovieReviews';
-import { useLocation } from 'react-router-dom';
 
 function Reviews() {
   const location = useLocation();
@@ -27,7 +27,7 @@ function Reviews() {
     <div>
       <ul>
         {reviews.map(review => (
-          <li key={review.id}>
+          <li key={review.id} className="ReviewList">
             <h3>{review.author}</h3>
             <p>{review.content}</p>
           </li>

@@ -23,13 +23,17 @@ function Cast() {
   }, [movieId]);
 
   return (
-    <div>
-      <h2>Cast</h2>
-      <ul>
+    <div className="ActorContainer">
+      <ul className="ActorList">
         {credits.map(actor => (
           <li key={actor.id}>
             <img
-              src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
+              className="CastImg"
+              src={
+                actor.profile_path
+                  ? `https://image.tmdb.org/t/p/w500/${actor.profile_path}`
+                  : 'https://d32qys9a6wm9no.cloudfront.net/images/others/not_available/poster_500x735.png?t=1699920683'
+              }
               alt={actor.name}
             />
             <p>{actor.name}</p>

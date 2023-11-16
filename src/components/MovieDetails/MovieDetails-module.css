@@ -1,0 +1,18 @@
+.MovieContainer {
+  display: flex;
+  margin-left: 10px;
+}
+
+.DetailsImg {
+  display: block;
+  width: 280px;
+  height: auto;
+}
+.MovieInfo {
+  float: right;
+  margin-left: 10px;
+}
+.AdditionalInfo {
+  display: block;
+  text-align: center;
+}

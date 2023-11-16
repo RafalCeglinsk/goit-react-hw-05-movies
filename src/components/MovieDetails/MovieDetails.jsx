@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { Link, useLocation, Outlet } from 'react-router-dom';
 import { getMovieDetails } from 'api/getMovieDetails';
 
 function MovieDetails() {
@@ -14,7 +14,6 @@ function MovieDetails() {
       try {
         const data = await getMovieDetails(movieId);
         setDetails(data);
-        console.log(data);
       } catch (error) {
         console.error('Error while fetching movie details', error);
       }
@@ -29,36 +28,44 @@ function MovieDetails() {
 
   return (
     <div>
-      <h2>{details.title}</h2>
-      <p>User Score: {details.vote_average}</p>
-      <h2>Overview</h2>
-      <p>{details.overview}</p>
-      <h2>Genres</h2>
-      <p>
-        {details.genres.map(genre => (
-          <span key={genre.id}>{genre.name}, </span>
-        ))}
-      </p>
-
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`}
-        alt={details.title}
-      />
-
-      <ul>
-        <h2>Additional Information</h2>
-        <Outlet />
-        <li>
-          <Link to="cast" state={{ movieId: movieId }}>
-            Cast
+      <div className="MovieContainer">
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`}
+          alt={details.title}
+          className="DetailsImg"
+        />
+        <div className="MovieInfo">
+          <h2>{details.title}</h2>
+          <p>User Score: {details.vote_average}</p>
+          <h2>Overview</h2>
+          <p>{details.overview}</p>
+          <h2>Genres</h2>
+          <p>
+            {details.genres.map(genre => (
+              <span key={genre.id}>{genre.name}, </span>
+            ))}
+          </p>
+          <Link to={location.state.from} state={{ from: location }}>
+            Go back
           </Link>
-        </li>
-        <li>
-          <Link to="reviews" state={{ movieId: movieId }}>
-            Reviews
-          </Link>
-        </li>
-      </ul>
+        </div>
+      </div>
+      <div>
+        <h2 className="AdditionalInfo">Additional Information</h2>
+        <ul className="AdditionalContainer">
+          <Outlet />
+          <li>
+            <Link to="cast" state={{ from: location, movieId: movieId }}>
+              Cast
+            </Link>
+          </li>
+          <li>
+            <Link to="reviews" state={{ from: location, movieId: movieId }}>
+              Reviews
+            </Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

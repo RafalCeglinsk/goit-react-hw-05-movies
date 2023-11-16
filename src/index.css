@@ -2,6 +2,9 @@
 @import './components/Home/Home-module.css';
 @import './components/ShrayedLayout/ShrayedLayout-module.css';
 @import './components/Movies/Movies-module.css';
+@import './components/MovieDetails/MovieDetails-module.css';
+@import './components/Cast/Cast-module.css';
+@import './components/Reviews/Reviews-module.css';
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
