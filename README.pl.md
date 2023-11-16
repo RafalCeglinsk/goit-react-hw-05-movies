@@ -10,7 +10,7 @@
 
 I would like to introduce you my application called Movie Finder. You can use
 this app to search popular movies all around the world! Check their cast
-ratings, reviews and details!
+reviews, ratings and details!
 
 ## Technologies
 
