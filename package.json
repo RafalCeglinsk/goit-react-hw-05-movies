@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "movies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goitacademy.github.io/react-homework-template/",
+  "homepage": "https://rafalceglinsk.github.io/goit-react-hw-05-movies/",
   "dependencies": {
     "axios": "^1.6.1",
     "components": "^0.1.0",
