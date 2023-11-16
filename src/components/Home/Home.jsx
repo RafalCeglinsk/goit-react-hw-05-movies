@@ -5,8 +5,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { getTrendingMovies } from 'api/getTrending';
 
 function Home() {
-  const [movies, setMovies] = useState([]);
   const location = useLocation();
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     async function fetchTrendingMovies() {
@@ -22,16 +22,20 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <h2>Trending Movies</h2>
-      <ul>
+    <div className="HomeContainer">
+      <h2 className="Tittle">Trending Movies</h2>
+      <ul className="HomeList">
         {movies.map(movie => (
-          <li key={movie.id}>
+          <li className="HomeListItem" key={movie.id}>
             <Link
               to={`/movies/${movie.id}`}
               state={{ from: location, movieId: movie.id }}
             >
-              {movie.title}
+              <img
+                className="HomeListImg"
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+              />
             </Link>
           </li>
         ))}

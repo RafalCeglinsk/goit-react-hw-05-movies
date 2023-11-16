@@ -1,0 +1,25 @@
+.HomeContainer {
+  background-color: grey;
+}
+
+.Tittle {
+  font-size: 1.8em;
+  display: block;
+  text-align: center;
+  color: white;
+}
+
+.HomeList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 30px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.HomeListImg {
+  display: block;
+  width: 280px;
+  height: auto;
+}
